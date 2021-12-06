@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/web.png">
+    <link rel="icon" type="image/png" href="assets/images/web.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Registrarse</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <!--  Fuentes - Bootstrap   -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!--        CSS              -->
+    <link href="assets/css/registrar.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- Tabla de productos -->
+    <div class="container">
+        <div class="mx-auto col-sm-16 main-section" id="myTab" role="tablist">
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+                    <div class="card">
+                        <div class="wizard-header">
+                            <img src="assets/images/superiorProd.jpg" class="imgNav" title="" />
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="userList" class="table table-bordered table-hover table-striped">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Referencia</th>
+                                            <th scope="col">Categoria</th>
+                                            <th scope="col">Descripcion</th>
+                                            <th scope="col">Disponible</th>
+                                            <th scope="col">Precio</th>
+                                            <th scope="col">Cantidad</th>
+                                            <th scope="col">Fotografia</th>
+                                            <th scope="col">Editar</th>
+                                            <th scope="col">Eliminar</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody id="resultadoTablaProducto">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fin tabla producto-->
+
+
+    <!-- Registrar producto -->
+    <div class="container">
+        <div>
+            <div class="wizard-container ">
+
+                <div class="Formulario">
+                    <form action="javascript:guardarProducto()" id="formularioRegPro">
+
+                        <div class="text-nav">
+                            Bienvenido
+                        </div>
+
+                        <div class="tab-content">
+                            <div>
+                                <h3 class="info-text"> Registre el producto</h3>
+
+                                <div class="row">
+                                    <div class="form-group col-sm-2">
+                                        <label>Referencia</label>
+                                        <input name="reference" id="reference" type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group col-sm-10">
+                                        <label>Descripcion <small>(obligatorio)</small></label>
+                                        <input name="description" id="description" type="text"
+                                            class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-sm-4">
+                                        <label>Categoria <small>(obligatorio)</small></label>
+                                        <input name="category" id="category" type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group col-sm-4 col-sm-offset-4">
+                                        <label>Cantidad <small>(obligatorio)</small></label>
+                                        <input name="quantity" id="quantity" type="number" class="form-control">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label>Precio <small>(obligatorio)</small></label>
+                                        <input name="price" id="price" type="number" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-sm-3">
+                                        <label>Disponible <small>(obligatorio)</small></label>
+                                        <select name="availability" id="availability" class="form-select form-select-lg" >
+                                            <option value="true">Si</option>
+                                            <option value="false">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-sm-9">
+                                        <label>Foto del producto <small>(obligatorio)</small></label>
+                                        <input name="photography" id="photography" type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="wizard-footer height-wizard">
+                            <div class="btnReg">
+                                <input type="submit" class="btn btn-wd btn-sm" name="registrarPro" id="registrarPro"
+                                    value="Registrar" />
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- fin registrar producto -->
+
+    <div class="footer">
+        <div class="container">
+             <a href="pasarelaUsu.html">&nbspClic aqui para ingresar al menu principal &nbsp<i
+                    class="fas fa-sign-in-alt heart"></i></a>
+        </div>
+    </div>
+
+    </div>
+    <!--   JS   -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <!--   JS validaciones   -->
+    <script src="assets/js/traduccionesValidate.js"></script>
+    <!--   JS Alertas   -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="assets/js/funcionesRegistrar.js"></script>
+    <script type="text/javascript">window.onload = tablaProductos();</script>
+</body>
+
+</html>
